@@ -1,7 +1,7 @@
 <script setup>
-import Header from './components/Header.vue';
-import Upload from './components/Upload.vue';
-import Scene from './components/Scene.vue';
+  import Header from './components/Header.vue';
+  import Upload from './components/Upload.vue';
+  import Scene from './components/Scene.vue';
 </script>
 
 <template>
@@ -33,7 +33,6 @@ import Scene from './components/Scene.vue';
 </script>
 
 <style>
-@import './assets/base.css';
 @font-face {
   font-family: "Garet Heavy";
   src: local("Garet Heavy"), url(./assets/Garet.otf) format("opentype")
