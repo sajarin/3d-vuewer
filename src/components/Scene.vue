@@ -31,9 +31,14 @@ export default {
     init: function() {
         let container = document.getElementById('canvas-container');
 
-        this.camera = new Three.PerspectiveCamera(75, container.clientWidth/container.clientHeight, 0.0001, 10);
-        this.camera.position.z = 1;
+        this.camera = new Three.PerspectiveCamera(45, container.clientWidth/container.clientHeight, 0.01, 100);
+        this.camera.position.set(7.5,7.5,7.5)
         this.scene = new Three.Scene();
+
+        const size = 10;
+        const divisions = 10;
+        const gridHelper = new Three.GridHelper( size, divisions, 0xff0000, 0x0000ff);
+        this.scene.add( gridHelper );
 
         this.loader = new ColladaLoader()
         this.object = this.loader.parse(this.$props.contents)
@@ -43,7 +48,7 @@ export default {
             }
         })
         this.scene.add(this.object.scene)
-        this.scene.background = new Three.Color( 0xF2E7F0)
+        this.scene.background = new Three.Color( 0xe8e8e8)
 
         this.renderer = new Three.WebGLRenderer({antialias: true});
         this.controls = new OrbitControls(this.camera, this.renderer.domElement);
