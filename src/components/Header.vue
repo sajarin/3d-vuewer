@@ -33,4 +33,35 @@
         letter-spacing: 5px;
         color: white;
     }
+    @media (min-width: 481px) and (max-width: 767px) {
+        .header {
+            width: 95%;
+            height: 50px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.0rem;
+            line-height: 3.2rem;
+            font-family: "Garet Heavy";
+            letter-spacing: 5px;
+            color: white;
+        }
+    }
+
+    @media (min-width: 320px) and (max-width: 480px) {
+        .header {
+            width: 95%;
+            height: 50px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.0rem;
+            line-height: 3.2rem;
+            font-family: "Garet Heavy";
+            letter-spacing: 5px;
+            color: white;
+        }
+    }
 </style>

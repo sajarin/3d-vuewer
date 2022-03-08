@@ -97,4 +97,28 @@ export default {
         margin: 0 auto; 
         margin-top: 2em;
     }
+    @media (min-width: 481px) and (max-width: 767px) {
+        .container{
+            width: 95%;
+            margin: 0 auto; 
+            margin-top: 2em;
+        }
+        #canvas-conatiner {
+            width: 95%;
+            min-height: 55%;
+        }
+    }
+
+    @media (min-width: 320px) and (max-width: 480px) {
+        .container{
+            width: 95%;
+            margin: 0 auto; 
+            margin-top: 2em;
+        }
+        #canvas-conatiner {
+            width: 95%;
+            min-height: 55%;
+        }
+    }
+
 </style>
