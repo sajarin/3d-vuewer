@@ -9,8 +9,8 @@
       <Header color="black" text="3D VUEWER"/>
   </header>
   <main>
-    <Upload v-if="file === null" @load="onLoad"/>
-    <Scene v-if="file != null" :contents="file" v-on:btn-click="handleRender"/>
+    <Upload v-if="showUpload === true" @load="onLoad"/>
+    <Scene v-if="showUpload === false" :contents="file"  v-on:btn-click="handleDerender"/>
   </main>
 </template>
 
@@ -18,15 +18,18 @@
   export default {
     data() {
       return {
-        file: null
+        file: null,
+        showUpload: true
       }
     },
     methods: {
       onLoad: function(fileContents) {
         this.file = fileContents
+        this.showUpload = false
       },  
-      handleRender: function() {
+      handleDerender: function() {
         this.file = null
+        this.showUpload = true 
       }
     }
   }

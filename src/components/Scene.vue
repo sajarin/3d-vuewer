@@ -3,15 +3,20 @@
     defineProps({
         contents: {
             type: String,
-            required: true 
-        }, 
+            required: false 
+        },
+        key: {
+            type: Number,
+            required: true
+        }
+         
     })
 </script>
 
 <template>
     <div class="container">
         <div id="canvas-container"> </div>
-        <Button v-on:click="this.$emit('btn-click')" stylings="btn highlighted ripple" text="Back to Upload"/>
+        <Button id="return" v-on:click="$emit('btn-click')" stylings="btn highlighted ripple" text="Back to Upload"/>
     </div>
 </template>
 
@@ -30,6 +35,7 @@ export default {
   methods: {
     init: function() {
         let container = document.getElementById('canvas-container');
+        container.innerText = ""
 
         this.camera = new Three.PerspectiveCamera(45, container.clientWidth/container.clientHeight, 0.01, 100);
         this.camera.position.set(7.5,7.5,7.5)
@@ -71,6 +77,7 @@ export default {
       this.init();
       this.animate();
       window.addEventListener('resize', this.handleResize);
+      console.log(this.$props.key)
   }
 }
 </script>
@@ -84,5 +91,10 @@ export default {
     #canvas-container {
         min-height: 65vh; 
         cursor: move;
+    }
+    #return {
+        width: 100%;
+        margin: 0 auto; 
+        margin-top: 2em;
     }
 </style>
